@@ -1,0 +1,29 @@
+<h2> </h2>
+<mat-toolbar>
+	<app-search-field class="flex-auto" [loading]="loading" [observer]="observer"></app-search-field>
+</mat-toolbar>
+
+<div id="dropbar">
+  &emsp;
+	Rating:
+	<select name="rating" (change)="onChange($event.target.value)">
+  <option *ngFor="let rate of ratings"  [value]="rate.id">{{rate.name}}</option>
+  </select>
+	&emsp;
+	Gender:
+	<select name="rating" (change)="onChange($event.target.value)">
+  <option *ngFor="let rate of ratings"  [value]="rate.id">{{rate.name}}</option>
+  </select>
+	&emsp;
+	Decade:
+	<select name="rating" (change)="onChange($event.target.value)">
+  <option *ngFor="let rate of ratings"  [value]="rate.id">{{rate.name}}</option>
+  </select>
+
+</div>
+
+<div>
+	<ng-container *ngIf="(searchResult$ | async) as searchResult">
+		<app-search-results [searchResult]="searchResult"></app-search-results>
+	</ng-container>
+</div>

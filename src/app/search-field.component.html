@@ -1,0 +1,4 @@
+<mat-form-field>
+      <input matInput placeholder="Busca" [formControl]="control" required>
+      <mat-icon *ngIf="control.value" matSuffix (click)="control.reset()">close</mat-icon>
+    </mat-form-field>

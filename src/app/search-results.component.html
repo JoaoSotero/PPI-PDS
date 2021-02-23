@@ -1,0 +1,27 @@
+<div class="flex flex-wrap items-stretch  mxn1">
+	<div id="PosterGeral">
+		<div class="sm-col sm-col-12 md-col-6 lg-col-6 p1 flex" id="PosterGeral"
+			*ngFor="let movie of searchResult.results">
+			<div class="flex mat-elevation-z1" id="Poster">
+				<img *ngIf="movie.poster_path" aria-hidden src="{{movie.poster_path}}" />
+				<div *ngIf="!movie.poster_path">
+					<mat-icon>movie</mat-icon>
+				</div>
+				<mat-card class="flex-auto mat-elevation-z0">
+					<mat-card-header>
+						<mat-card-title>
+							<h1>{{ movie.title }}</h1>
+						</mat-card-title>
+						<mat-card-subtitle>
+							<h2>{{movie.release_date | date}}</h2>
+						</mat-card-subtitle>
+					</mat-card-header>
+					<h3>{{movie.overview}}
+						<br>
+						<br>
+             Rate: {{movie.vote_average}}/10</h3>
+				</mat-card>
+			</div>
+		</div>
+	</div>
+</div>
